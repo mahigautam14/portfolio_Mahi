@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --netflix-red: #e50914;
+  --bg-deep: #07070a;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (pointer: fine) {
+  html, body, a, button, [role="button"], input, select, label {
+    cursor: none !important;
+  }
+}
+
+html {
+  background-color: #07070a;
+  color: #f4f4f5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #07070a;
+  overflow-x: hidden;
+}
+
+/* Silky-smooth hardware-accelerated transitions for all interactive elements */
+a, button, [role="button"], [data-cursor] {
+  transition-property: transform, opacity, background-color, border-color, color, box-shadow;
+  transition-duration: 280ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-serif-italic {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+
+.animate-float-slow {
+  will-change: transform;
+  animation: floatSlow 5.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-float-delayed {
+  will-change: transform;
+  animation: floatSlow 6.5s cubic-bezier(0.45, 0, 0.55, 1) 1.5s infinite;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fadeSlideUp 360ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
